@@ -16,10 +16,10 @@ The hyper key is defined as `⌘ + ⌥ + ⌃` (control + option + command). Pres
 | D   | Dash               |
 | F   | Finder             |
 | G   | SourceTree (Git)   |
-| M   | Mail               |
+| M   | Spark              |
 | P   | System Preferences |
 | S   | Spotify            |
-| T   | Terminal           |
+| T   | iTerm              |
 
 ## Window Management
 
