@@ -124,7 +124,6 @@ alias gp='git push'
 alias gascm='git add .; git status; git commit -m '
 alias git-rm-deleted="git ls-files -d | xargs git rm"
 alias gl='clear && git status'
-alias gup="git push origin $(git rev-parse --abbrev-ref HEAD)"
 
 # Miscellaneous
 
