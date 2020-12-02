@@ -23,7 +23,7 @@ PATH="$DOTFILES_DIR/bin:$PATH"
 
 # Source the dotfiles (order matters)
 
-for DOTFILE in "$DOTFILES_DIR"/system/.{function,function_*,path,env,alias,grep,prompt,nvm,completion,fix,custom}; do
+for DOTFILE in "$DOTFILES_DIR"/system/.{function,function_*,path,env,alias,grep,prompt,nvm,completion,fix,custom}.sh; do
   [ -f "$DOTFILE" ] && . "$DOTFILE"
 done
 
@@ -35,7 +35,7 @@ fi
 
 # Set LSCOLORS
 
-eval "$(dircolors -b "$DOTFILES_DIR"/system/.dir_colors)"
+eval "$(dircolors -b "$DOTFILES_DIR"/system/.dir_colors.sh)"
 
 # Hook for extra/custom stuff
 

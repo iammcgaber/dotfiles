@@ -32,8 +32,8 @@ LS_TIMESTYLEISO=$(is-supported "ls --time-style=long-iso" --time-style=long-iso)
 LS_GROUPDIRSFIRST=$(is-supported "ls --group-directories-first" --group-directories-first)
 
 alias l="ls -h1a $LS_COLORS $LS_TIMESTYLEISO $LS_GROUPDIRSFIRST"
-alias ll="ls -alF $LS_COLORS"
-alias lt="ls -lhAtr $LS_COLORS $LS_TIMESTYLEISO $LS_GROUPDIRSFIRST"
+alias lt="ls -alF $LS_COLORS"
+alias ll="ls -lhAtr $LS_COLORS $LS_TIMESTYLEISO $LS_GROUPDIRSFIRST"
 alias ld="ls -ld $LS_COLORS */"
 alias lp="stat -c '%a %n' *"
 
@@ -128,10 +128,9 @@ alias gup="git push origin $(git rev-parse --abbrev-ref HEAD)"
 
 # Miscellaneous
 
-alias cl='clear && l'
+alias cl='clear && ll'
 alias hosts="sudo $EDITOR /etc/hosts"
 alias quit="exit"
 alias week="date +%V"
 alias speedtest="wget -O /dev/null http://speed.transip.nl/100mb.bin"
-alias kilominx=echo "R U R' U' R' F R2 U' R' U' R U R' F'"
-alias ruwix=echo "https://ruwix.com/twisty-puzzles/megaminx-gigaminx-teraminx-petaminx/"
+alias dad='curl https://icanhazdadjoke.com/ && echo ""'

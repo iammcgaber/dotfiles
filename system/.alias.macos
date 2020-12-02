@@ -11,7 +11,7 @@ alias cask="brew cask"
 alias chrome="open -a ~/Applications/Google\ Chrome.app"
 alias canary="open -a ~/Applications/Google\ Chrome\ Canary.app"
 alias firefox="open -a ~/Applications/Firefox.app"
-alias finder='open -a ~/Applications/Finder.app'
+alias finder='open'
 alias edit='code '
 
 # Exclude macOS specific files in ZIP archives
@@ -75,6 +75,3 @@ alias ram="top -l 1 -s 0 | grep PhysMem"
 
 alias pbtext="pbpaste | textutil -convert txt -stdin -stdout -encoding 30 | pbcopy"
 alias pbspaces="pbpaste | expand | pbcopy"
-
-# Misc
-alias dad='!curl https://icanhazdadjoke.com/ && git add'

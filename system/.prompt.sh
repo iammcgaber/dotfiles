@@ -3,7 +3,7 @@
 _bash_prompt_config() {
 
   local USER_SYMBOL="\u"
-  local HOST_SYMBOL="\h"
+  local HOST_SYMBOL=$(ifconfig en0 | grep inet | grep -v inet6 | cut -d" " -f2)
   local ESC_OPEN="\["
   local ESC_CLOSE="\]"
 
@@ -88,6 +88,8 @@ bash_prompt_command() {
   # Exit code
   if [[ $EXIT_CODE != 0 ]]; then
     P_EXIT+="${P_RED}✘ "
+  elif [[ $EXIT_CODE == 0 ]]; then
+    P_EXIT+="${P_GREEN}✔ "
   fi
 
   PS1="${P_EXIT}${P_USER}${P_WHITE}@${P_HOST} ${P_YELLOW}${P_PWD}${P_GREEN}${P_GIT}${P_YELLOW} ❯ ${P_RESET}"
@@ -102,3 +104,5 @@ _bash_prompt_config
 unset _bash_prompt_config
 
 PROMPT_COMMAND=bash_prompt_command
+
+
