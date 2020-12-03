@@ -1,6 +1,6 @@
 # .files
 
-These are my dotfiles. Take anything you want, but at your own risk.
+These are my dotfiles. They are primarily based on the excellent work done by [webpro](https://github.com/webpro/dotfiles).
 
 It mainly targets macOS systems, but it works on at least Ubuntu as well.
 
@@ -10,7 +10,7 @@ It mainly targets macOS systems, but it works on at least Ubuntu as well.
 - Mostly based around Homebrew, Caskroom and Node.js, latest Bash + GNU Utils
 - Great [Window management](./config/hammerspoon/README.md) (using Hammerspoon)
 - Fast and colored prompt
-- Updated macOS defaults
+- Customizable macOS defaults
 - Well-organized and easy to customize
 - The installation and runcom setup is
   [tested weekly on real Ubuntu and macOS machines](https://github.com/webpro/dotfiles/actions) using
@@ -28,22 +28,13 @@ It mainly targets macOS systems, but it works on at least Ubuntu as well.
 
 ## Installation
 
-On a sparkling fresh installation of macOS:
-
-```bash
-sudo softwareupdate -i -a
-xcode-select --install
-```
-
-The Xcode Command Line Tools includes `git` and `make` (not available on stock macOS). Now there are two options:
-
 1. Install this repo with `curl` available:
 
 ```bash
 bash -c "`curl -fsSL https://raw.githubusercontent.com/webpro/dotfiles/master/remote-install.sh`"
 ```
 
-This will clone or download, this repo to `~/.dotfiles` depending on the availability of `git`, `curl` or `wget`.
+This will clone or download, this repo to `~/.dotfiles` and install the tools necessary to install the dotfiles.
 
 1. Alternatively, clone manually into the desired location:
 
@@ -59,17 +50,16 @@ cd ~/.dotfiles
 make
 ```
 
-The installation process in the Makefile is tested on every push and every week in this
-[GitHub Action](https://github.com/webpro/dotfiles/actions).
+TODO:
+The installation process in the Makefile will be tested on every push and every week here: 
+[GitHub Action](https://github.com/iammcgaber/dotfiles/actions).
 
 ## Post-Installation
 
 - `dotfiles dock` (set [Dock items](./macos/dock.sh))
 - `dotfiles macos` (set [macOS defaults](./macos/defaults.sh))
-- Mackup
-  - Log in to Dropbox (and wait until synced)
-  - `ln -s ~/.config/mackup/.mackup.cfg ~` (until [#632](https://github.com/lra/mackup/pull/632) is fixed)
-  - `mackup restore`
+- Log in to Dropbox (and wait until synced)
+  - `dotfiles mackup` (set [mackup configs](./config/mackup/.mackup.cfg))
 
 ## The `dotfiles` command
 
@@ -83,13 +73,14 @@ Commands:
     edit             Open dotfiles in IDE (code) and Git GUI (stree)
     help             This help message
     macos            Apply macOS system defaults
+    mackup           Configure mackup and restore configs from backup if they exist
     test             Run tests
     update           Update packages and pkg managers (OS, brew, npm, gem)
 ```
 
 ## Customize
 
-You can put your custom settings, such as Git credentials in the `system/.custom` file which will be sourced from
+You can put your custom settings, such as Git credentials in the `system/.custom.sh` file which will be sourced from
 `.bash_profile` automatically. This file is in `.gitignore`.
 
 Alternatively, you can have an additional, personal dotfiles repo at `~/.extra`. The runcom `.bash_profile` sources all
@@ -97,6 +88,7 @@ Alternatively, you can have an additional, personal dotfiles repo at `~/.extra`.
 
 ## Additional Resources
 
+- [Webpro Dotfiles](https://github.com/webpro/dotfiles)
 - [Awesome Dotfiles](https://github.com/webpro/awesome-dotfiles)
 - [Homebrew](https://brew.sh)
 - [Homebrew Cask](https://github.com/Homebrew/homebrew-cask)

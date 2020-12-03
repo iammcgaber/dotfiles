@@ -13,6 +13,7 @@ sub_help () {
   echo "   edit             Open dotfiles in IDE ($DOTFILES_IDE) and Git GUI ($DOTFILES_GIT_GUI)"
   echo "   help             This help message"
   echo "   macos            Apply macOS system defaults"
+  echo "   mackup           Configure mackup and restore configs from backup if they exist"
   echo "   test             Run tests"
   echo "   update           Update packages and pkg managers (OS, brew, npm, gem)"
 }
@@ -34,6 +35,13 @@ sub_update () {
   npm update -g
   gem update --system
   gem update
+}
+
+sub_mackup () {
+  symlink="${HOME}/.mackup.cfg"
+  mkdir -p ~/Dropbox/Library/mackup
+  if [ ! -e ${symlink} ]; then ln -s ${HOME}/.config/mackup/.mackup.cfg ${HOME}; fi
+  mackup restore
 }
 
 sub_clean () {
