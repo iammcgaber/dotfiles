@@ -27,6 +27,9 @@ stow-macos: brew
 stow-linux: core-linux
 	is-executable stow || apt-get -y install stow
 
+poetry-python:
+	is-executable poetry || curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+
 sudo:
 ifndef GITHUB_ACTION
 	sudo -v
