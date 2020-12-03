@@ -1,1 +1,9 @@
-/Users/gabrielsheeley/Dropbox/Library/mackup/.config/git/ignore
+*~
+._*
+.DS_Store
+.idea
+.vscode
+node_modules
+bower_components
+npm-debug.log
+private/*
