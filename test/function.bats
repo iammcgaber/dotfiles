@@ -1,7 +1,7 @@
 #!/usr/bin/env bats
 
-load "../system/.function.sh"
-load "../system/.function_text"
+load "../system/.function_other.sh"
+load "../system/.function_text.sh"
 
 FIXTURE=$'foo\nbar\nbaz\nfoo'
 FIXTURE_TEXT="foo"

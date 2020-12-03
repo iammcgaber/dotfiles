@@ -12,6 +12,7 @@ esbenp.prettier-vscode
 formulahendry.auto-rename-tag
 formulahendry.docker-explorer
 Gruntfuggly.todo-tree
+jetmartin.bats
 msjsdiag.debugger-for-chrome
 ms-azuretools.vscode-docker
 ms-vscode-remote.remote-containers

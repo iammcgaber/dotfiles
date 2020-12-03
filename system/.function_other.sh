@@ -56,6 +56,16 @@ function git_clone() {
     git clone ${repo} && cd ${dir_name}
 }
 
+function git_set_work() {
+  git config user.name ${WORK_NAME}
+  git config user.email ${WORK_EMAIL}
+}
+
+function git_set_personal() {
+  git config user.name ${PERSONAL_NAME}
+  git config user.email ${PERSONAL_EMAIL}
+}
+
 # Switch long/short prompt
 ps0() {
   unset PROMPT_COMMAND
