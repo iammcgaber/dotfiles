@@ -2,10 +2,6 @@
 
 alias cpwd="pwd|tr -d '\n'|pbcopy"
 
-# Securely Empty Trash
-
-alias empty_trash="srm -rv ~/.Trash"
-
 # Shortcuts
 
 alias gg="$DOTFILES_GIT_GUI"
