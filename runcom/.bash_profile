@@ -23,7 +23,7 @@ PATH="$DOTFILES_DIR/bin:$PATH"
 
 # Source the dotfiles (order matters)
 
-for DOTFILE in "$DOTFILES_DIR"/system/.{function,function_*,path,env,alias,grep,prompt,nvm,completion,fix,custom}.sh; do
+for DOTFILE in "$DOTFILES_DIR"/system/.{function,function_*,path,env,alias,grep,prompt,nvm,completion,fix,custom,color_functions}.sh; do
   [ -f "$DOTFILE" ] && . "$DOTFILE"
 done
 
@@ -55,4 +55,3 @@ unset READLINK CURRENT_SCRIPT SCRIPT_PATH DOTFILE EXTRAFILE
 
 export DOTFILES_DIR DOTFILES_EXTRA_DIR
 
-export PATH="$HOME/.poetry/bin:$PATH"

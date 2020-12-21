@@ -1,7 +1,7 @@
 #!/bin/bash
 
-source ${HOME}/.bash/env/colors.sh
-declare color_file=${HOME}/.bash/env/colors.sh
+source ${DOTFILES_DIR}/system/.colors.sh
+declare color_file=${DOTFILES_DIR}/system/.colors.sh
 
 # Default color.  In bash if you don't end with this the color stays. In zsh not so.
 declare def=$'\e[0m'
@@ -12,8 +12,20 @@ function list_colors() {
     while read color; do
       my_color_var=$(echo $color | sed 's/=.*//')
       my_color_name=$(echo $color | sed 's/.* #//')
-      eval echo "\$${my_color_var}\This color is ${my_color_name}${def}"
+      if [ -n ${my_color_name} ]; then
+        eval echo "\$${my_color_var}\This color is ${my_color_name}${def}"
+      fi
     done
+}
+
+# Show 256 TERM colors
+colors() {
+  local X=$(tput op)
+  local Y=$(printf %$((COLUMNS-6))s)
+  for i in {0..256}; do
+  o=00$i;
+  echo -e ${o:${#o}-3:3} $(tput setaf $i;tput setab $i)${Y// /=}$X;
+  done
 }
 
 # Pass a color and text to change the color of that text.
